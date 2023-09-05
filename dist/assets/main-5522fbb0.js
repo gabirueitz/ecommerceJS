@@ -1,0 +1,7 @@
+import{c as i}from"./utilidades-e848f4ad.js";import{a as s,i as a,b as r,r as d}from"./menuCarrinho-f89fd9b1.js";function c(){for(const o of i){const e=`<div class="w-48 m-2 flex flex-col justify-between p-2 shadow-xl shadow-slate-400 rounded-lg group ${o.feminino?"feminino":"masculino"}" id="card-produto-${o.id}">
+<img src="./src/img/${o.imagem}.jpg" class="group-hover:scale-110 duration-300 my-3 rounded-lg"/>
+<p class="text-sm">${o.marca}</p>
+<p class="text-sm">${o.nome}</p>
+<p class="text-sm">$ ${o.preco}</p>
+<button id="adicionar-${o.id}" class="bg-slate-950 hover:bg-slate-700 text-slate-200"><i class="fa-solid fa-cart-plus"></i></button>
+</div>`;document.getElementById("container-produto").innerHTML+=e}for(const o of i)document.getElementById(`adicionar-${o.id}`).addEventListener("click",()=>s(o.id))}const t=document.getElementById("container-produto");function n(){const o=Array.from(t.getElementsByClassName("hidden"));for(const e of o)e.classList.remove("hidden")}function l(){const o=Array.from(t.getElementsByClassName("masculino"));n();for(const e of o)e.classList.add("hidden")}function m(){const o=Array.from(t.getElementsByClassName("feminino"));n();for(const e of o)e.classList.add("hidden")}function u(){document.getElementById("exibir-femininos").addEventListener("click",l),document.getElementById("exibir-masculinos").addEventListener("click",m),document.getElementById("exibir-todos").addEventListener("click",n)}c();a();r();d();u();
